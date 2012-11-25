@@ -1,4 +1,4 @@
 VortragLocationPrivacyLost
 ==========================
 
-Vortrag zum Thema Location privacy Lost in the celluar age.
+Vortrag zum Thema/Paper: The Loss of Location Privacy in the Cellular Age (CACM).
