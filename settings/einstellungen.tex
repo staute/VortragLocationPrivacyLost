@@ -1,18 +1,74 @@
 \documentclass[xcolor=dvipsnames]{beamer}
-\usetheme{Berkeley}
+\usetheme{%
+	%Meins%
+	%AnnArbor % Geht (fhlogo)
+	%Antibes% Geht
+	%Bergen%
+	%Berkeley%
+	%Berlin%
+	%Boadilla%
+	%boxes%
+	%CambridgeUS% Geht (fhlogo)
+	%Copenhagen%
+	Darmstadt% Geht, Favorit 1
+	%default%
+	%Dresden%
+	%Frankfurt%
+	%Goettingen% Geht (komisch farbe)
+	%Hannover%
+	%Ilmenau%
+	%JuanLesPins% Geht
+	%Luebeck%
+	%Madrid% Geht (fhlogo)
+	%Malmoe%
+	%Marburg% Geht, Favorit 2
+	%Montpellier%
+	%PaloAlto%
+	%Pittsburgh%
+	%Rochester%
+	%Singapore%
+	%Szeged%
+	%Warsaw%
+}
 \usecolortheme[named=ForestGreen]{structure}
+%\usefonttheme{professionalfonts}
 \setbeamercovered{transparent}
 \beamertemplatenavigationsymbolsempty
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
-\title{Vortrag „Loss of Location Privacy“}
+\usepackage{verbatim}
+%\usepackage{media9}
+%\usepackage{movie15}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{animate}
+
+
+
+\title{``The Loss of Location Privacy''}
 \author{Stephan Latta \& Stefan Taute}
 %\institute{\hspace{1cm}\includegraphics[width=80pt]{images/fhs.pdf} \hspace{1cm} \includegraphics[scale=0.4]{images/planetic2.pdf}} 
 \institute{\includegraphics[width=80pt]{images/fhs.pdf}}
 \date{11. Dezember 2012}
 
 
-
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+   %\usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+   \usebeamerfont{author in head/foot}\insertshortauthor~~
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+   \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
 
 
