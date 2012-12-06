@@ -1,4 +1,5 @@
 \input{settings/einstellungen}
+
 \begin{document}
 
 %\begin{frame}{Bild Beispiel}
@@ -19,30 +20,23 @@
 
 \begin{frame}{Thema}
 \begin{center}
-  \huge \textbf{„Location Privacy“\\ \vspace{.5cm} Verlust der Privatsphäre im Mobilfunkzeitalter}
+  \huge \textbf{"`The Loss of Location Privacy in the Cellular Age"'\\ \vspace{.5cm} (Verlust der Privatsphäre im Mobilfunkzeitalter)}
 \end{center}
 \end{frame}
 
 \begin{frame}{Gliederung}
-  \tableofcontents[pausesections,hideallsubsections]
+  \tableofcontents[hideallsubsections] %[pausesections,hideallsubsections]
 \end{frame}
 
 \section{Einleitung}
-\begin{frame}{Einleitung}
-\begin{itemize}
-  \item Hintergrund
-  \item Zielsetzung
-\end{itemize}
-\end{frame}
-
-\subsection{Hintergrund}
+\subsection{}
 \begin{frame}{Hintergrund}
 \begin{itemize}
-  \item "Location Privacy" häufiger Begriff in Datenschutzdebatten
+  \item "`Location Privacy"' häufiger Begriff in Datenschutzdebatten
   \item mögliche Risiken, Gefahren des Verlusts der örtlichen Privatsphäre
   \item heutzutage besitzen die meisten Menschen ein Smartphone, somit jederzeit lokalisierbar
   \item entscheidene Unternehmen sind Apple und Google
-  \item Brisanter Fund April 2011: Alasdair Allan und Peter Warden finden Datei namens "consolidated.db"
+  \item Brisanter Fund April 2011: Alasdair Allan und Peter Warden finden Datei namens "`consolidated.db"'
 \end{itemize}
 \end{frame}
 
@@ -57,7 +51,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{Hintergrund}
 \begin{center}
-  \huge \textbf{Video:\\\vspace{1cm} ``iPhone Tracking Discussion''}
+  \huge \textbf{Video:\\\vspace{1cm} "`iPhone Tracking Discussion"'}
 \end{center}
 \vspace{2cm}
 \begin{center}
@@ -65,11 +59,11 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{center}
 \end{frame}
 
-\subsection{Zielsetzung}
+\subsection{}
 \begin{frame}{Zielsetzung}
 \begin{itemize}
-  \item Einblick in das Thema "Location Privacy"
-  \item Grundlage war der wissenschaftliche Artikel "The Loss of Location Privacy in the Cellular Age" (Stephen B. Wicker, August 2012 CACM)
+  \item Einblick in das Thema "`Location Privacy"'
+  \item Grundlage war der wissenschaftliche Artikel "`The Loss of Location Privacy in the Cellular Age"' (Stephen B. Wicker, August 2012 CACM)
   \item Grundlagen zum Verstehen der Thematik
   \item Gefahren \& Risiken
   \item Möglichkeiten zum Schutz durch direkte Anonymisierung
@@ -77,21 +71,6 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame}
 
 \section{Grundlagen}
-\begin{frame}{Grundlagen zur Thematik}
-\begin{itemize}
-  \item Ortungstechnologie
-  \begin{itemize}
-    \item Mobilfunküberwachung \& E911
-    \item GPS
-    \item Alternative zu GPS
-  \end{itemize}
-  \item Location Based Services
-  \item Location Based Advertising
-  \item Privatsphäre \& Anonymisierung
-  \item Ort
-\end{itemize}
-\end{frame}
-
 \subsection{Ortungstechnologie}
 \subsubsection{Mobilfunküberwachung \& E911}
 \begin{frame}{Mobilfunküberwachung \& E911}
@@ -108,89 +87,405 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \begin{itemize}
   \item heutzutage verfügen Smartphones über GPS womit die Ortung noch exakter ist
   \item das \textbf{G}lobal \textbf{P}ositioning \textbf{S}ystem ist ein Satelliten gestütztes Ortungssystem
-  \item 
+  \item grundsätzlich nicht für Smartphones konzipiert, sonder für allg. Einsatz im Außenbereich
+  \item GPS-Signale enthalten Orte und Umlaufbahnen der jeweiligen Satelliten
+  \item Daten ermöglichen dem Empfänger die Lokalisierung
+  \item langsame Datenübertragung, Ortung kann daher bis zu 12,5 Minuten dauern
+  \item Daten werden nur mit 50 kbps übertragen um Signalstörungen und gegenseitige Beeinflussung zu vermeiden
 \end{itemize}
 \end{frame}
 
 \subsubsection{Alternative zu GPS}
-\begin{frame}{Alternative zu GPS}
+\begin{frame}<1>[t,label=zooms]{Netzwerkbasierte Lokalisierung}
 \begin{itemize}
-  \item \dots
+  \item wegen der meist langsamen Ortung durch GPS sucht man aktiv nach Alternativen
+  \item eine ist die netzwerkbasierte Positionsbestimmung
+  \item ein gängiger Ansatz ist Cell-of-Origin (COO)
+  \item hierbei wird die Position des Mobilfunkmastes (Basiszelle) genutzt
+  \begin{columns}
+  \begin{column}{.47\textwidth}
+  \begin{itemize}
+  \vspace{-2cm}
+  \normalsize \item Wabe = Basiszelle
+  \item Standort durch Wabengröße sehr ungenau 
+  \end{itemize}
+  \end{column}
+  \begin{column}{.45\textwidth}
+  \begin{center}
+  \vspace{-0.5cm}
+  \framezoom<1><2>(5.8cm,3.5cm)(3cm,3cm)
+  \pgfimage[width=.8\textwidth]{images/basiszellen.png}
+  \end{center}
+  \end{column}
+  \end{columns}
 \end{itemize}
 \end{frame}
+\againframe<2>{zooms}
+
+\begin{frame}{Identifizierung von Access-Points}
+\begin{itemize}
+  \item noch besserer Ansatz ist die Identifizierung von Access-Points (AP) sowie Mobilfunkmasten
+  \item Apple und Google sammelt daher schon länger entsprechende Daten über ihre Endgeräte
+  \item großer Vorteil ist der meist feste Standort der APs und Masten
+  \item durch die gesammelten Daten lässt sich heute bis auf die Hausnummer genau bestimmen wo sich das Endgerät befindet
+  \item Position wird durch "`Triangulierung"' bestimmt
+\end{itemize}
+\end{frame}
+
+\begin{frame}<2>[t,label=zooms2]{Identifizierung von Access-Points}
+  \begin{columns}
+  \begin{column}{.4\textwidth}
+  \begin{itemize}
+  \item Waben zusammen sind vereinfacht eine Ortungskarte
+  \item Triangulierung auf Basis des am nächstliegenden 3 Ortungsbereiche (Waben)
+  \item \textcolor{red}{Schwerpunkt-Rechnung an der Tafel! (PDF S.5)}
+  \end{itemize}
+  \end{column}
+  \begin{column}{.5\textwidth}
+  \begin{center}
+  \framezoom<2><3>(4.15cm,0.45cm)(7.3cm,5.15cm)
+  \pgfimage[width=\textwidth]{images/triangulierung.png}
+  \end{center}
+  \end{column}
+  \end{columns}
+\end{frame}
+\againframe<3>{zooms2}
 
 \subsection{Location Based Services}
-\begin{frame}{Location Based Services}
+\begin{frame}{Definition LBS}
 \begin{itemize}
-  \item \dots
+  \item darunter versteht man standortbezogene Dienste, kurz LBS
+  \item Dienste berücksichtigen die aktuelle Position
+  \item oft werden zum Ort auch noch die aktuelle Zeit und Infos über den Nutzer berücksichtigt
+  \item Definition von Jochen Schiller und Agnes Voisard:\\ \vspace{.5cm}
+  \textit{"`Location Services can be defined as services that integrate a mobile device’s location or position with other information so as to provide added value to a user."'}
+  \vspace{.5cm}
+  \item Oft genutzt in Informationsdiensten zu Sehenswürdigkeiten, Einkaufsmöglichkeiten oder Ärzten in der näheren Umgebung
 \end{itemize}
 \end{frame}
 
-\subsection{Location Based Advertising}
+\begin{frame}{LBS - Unterteilung in Kategorien}
+  \begin{center}
+    \pgfimage[width=\textwidth]{images/lbs_kategorien.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{LBS - Hotelsuche}
+  \begin{center}
+    \pgfimage[height=\textheight]{images/hotelsuche.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{LBS - Restaurantsuche}
+  \begin{center}
+    \pgfimage[width=\textwidth]{images/restaurantsuche.png}
+  \end{center}
+\end{frame}
+
+\subsection{}
 \begin{frame}{Location Based Advertising}
 \begin{itemize}
-  \item \dots
+  \item kurz LBA, auch als Location Based Marketing (LBM) bekannt
+  \item sehr stark an LBS angelehnt, LBA beruht auf LBS
+  \item Verknüpfung zwischen Marketing (inkl. Werbung) und LBS
+  \item basierend auf Präferenzen, aktuellem Ort und der aktuellen Zeit wird dem Nutzer eine maßgeschneiderte Werbung präsentiert
 \end{itemize}
 \end{frame}
 
-\subsection{Privatsphäre \& Anonymisierung}
+\subsection{}
 \begin{frame}{Privatsphäre \& Anonymisierung}
 \begin{itemize}
-  \item \dots
+  \item Begriff Privatsphäre nicht klar abgrenzbar
+  \item Definition nach Alan Westin: \\ \vspace{.5cm}
+  \textit{"`Privacy is the claim of individuals, groups or institutions to determine for themselves when, how, and to what extend information about them is communicated to others.Viewed in terms of the relation of the individual to social participation, privacy is the voluntary and temporary withdrawal of a person from the general society through physical or psychological means, either in a state of solitude or small-group intimacy, or, when among larger groups, in a condition of anonymity and reserve."'}
 \end{itemize}
 \end{frame}
 
-\subsection{Ort}
-\begin{frame}{Ort}
+\begin{frame}{Privatsphäre \& Anonymisierung}
 \begin{itemize}
-  \item \dots
+  \item nach A. Westin hat jeder Mensch Anrecht selbst zu bestimmen, was er von sich preisgibt
+  \item außerdem wird deutlich das Privatsphäre mit dem Recht auf Anonymität einhergeht
+  \item "`Anonymität"' erlaubt es einer Person unter einer Menge von Personen nicht identifiziert zu werden
+\end{itemize}
+\end{frame}
+
+\subsection*{Ort}
+\begin{frame}{Aufassungen von Begriff "`Ort'}
+\begin{itemize}
+  \item es gibt verschiedene Auffassungen
+  \item im geografischen Sinne ein Raum bzw. fester Standort
+  \begin{itemize}
+    \item charakterisiert durch räumliche Ausdehnung und Position, gegeben durch Längen- sowie Breitengrade
+  \end{itemize}
+  \item eine philosophische Auffassung nach dem Geograf und polit. Philosoph John Agnew
+  \begin{itemize}
+    \item \textbf{Location:} \textit{Wo} - Position, die beispielsweise durch Längen- und Breitengrad gegeben ist
+    \item \textbf{Locale:} Gestalt des Ortes, die z. B. durch Grenzen (Mauern, Zäune, Bäume, Flüsse usw.) geprägt ist
+    \item \textbf{Sense:} durch Standort und örtliche Gegebenheiten generierte/verbundene persönliche Emotionen
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Aufassungen von Begriff "`Ort"'}
+\begin{itemize}
+  \item Ort wird nun eine gewisse Bedeutung, die von örtlichen Gegebenheiten und subjektiven Empfinden der Person abhängt
+  \item andere Phänomenologen und Geografen haben das ganze soweit aufgefasst das der Ort bzw. Platz zu einen tiefgreifenden Zentrum der menschlichen Existenz zählt
 \end{itemize}
 \end{frame}
 
 \section{Location Privacy}
+\subsection{Location Privacy}
 \begin{frame}{Location Privacy - Bedenken, Risiken \& Gefahren}
 \begin{itemize}
-  \item \dots
+  \item eine allg. Definition gibt es wie für "`Privatsphäre"' nicht
+  \item Definition nach R.Beresford und F.Stajano:\\ \vspace{.5cm}
+  \textit{"`[\dots] the ability to prevent other parties from learning one’s current or past location."'}
+  \vspace{.5cm}
+  \item Definition nach Duckham und Kulik:\\ \vspace{.5cm}
+  \textit{"`[\dots] a special type of information privacy which concerns the claim of individuals to determine for themselves when, how, and to what extent location information about them is communicated to others."'}
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Bewegungsprofil des IPhones von S. Wicker}
+  \begin{center}
+    \pgfimage[width=.9\textwidth]{images/profil.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Hauptbedenken von Datenschützern}
+  \begin{itemize}
+  \item aus dem Profil lässt sich problemlos ableiten das sich Wicker oft in Washington und New York aufhält
+  \item durch Bewegungsprofile kann unmittelbar nachvollzogen werden, wo sich eine Person aufgehalten hat
+  \item das ganze durch besser werdende Technik bis auf Adressebene
+  \item Problem, solche "`anonyme"' Daten können mit Hilfe anderer öffentlich zugänglicher Daten leicht de-anonymisiert werden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Mögliche ableitbare Informationen}
+  \begin{itemize}
+  \item \textbf{Zuhause}\\
+  Adresse, Art der Nachbarschaft $\Rightarrow$ Hypotheken, steuerliche Abgaben, sozioökonomischer Status usw.
+  \item \textbf{Freunde}\\
+  Art des Zuhause, Besuchsfrequenz und -dauer $\Rightarrow$ enge Freunde, Bekannte usw.
+  \item \textbf{Religiöse Einrichtungen}\\
+  Religion $\Rightarrow$ Glauben oder eventuell gar nicht gläubig
+  \item \textbf{Einkaufsläden}\\
+  Einkaufmuster $\Rightarrow$ Vorlieben, persönliche Laster usw.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Mögliche ableitbare Informationen}
+  \begin{itemize}
+  \item \textbf{Ärzte \& Kliniken}\\
+  Häufigkeit, Dauer, Fachgebiet des Arztes $\Rightarrow$ Krankheitsanfälligkeit, ernste oder
+  vielleicht chronische Krankheit usw.
+  \item \textbf{Einrichtung zur Unterhaltung/Freizeit}\\
+  z. B. Möglichkeit zu ermitteln welchen Musikstil eine Person bevorzugt und viele andere ableitbare Informationen
+  \item laut S. Wicker könnte diese Liste noch weiter fortgeführt werden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Kernaussage}
+  \begin{itemize}
+  \item Kernaussage soll sein, dass durch die adresslevel-genaue Lokalisierung Informationen über Vorlieben,
+  Eigenschaften, Laster, Glauben und Verhalten einer Person in bestimmten Fällen ableitbar sind
+  \item das ist auch der Grund warum diese Daten für gewisse Menschen, Unternehmen und Kriminellen so begehrt sind
+  \item gerade für Marketing Unternehmen stellen die Daten einen unschätzbaren Wert da
+  \item InfoUSA pflegt z.B. eine Liste mit 210 Mio. Konsumenten diese pflegt sich durch LBS nun wesentlich einfacher und besser
+  \item Früher: Person macht Yoga\\
+  Heute: Person macht Yoga + Yogastudio + aktuell Vorort + wie oft? usw.
+  \item LBA geht über normales Marketing weit hinaus
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Warum LBA Risiko für Privatsphäre?}
+ \begin{itemize}
+   \item Welchen Einfuss kann Werbung auf einen Menschen nehmen?
+   \item Autorin Judith Williamson beschreibt Werbung als Mittel zur Verschiebung des Sinns bzw. der Bedeutung eines semantischen Netzwerks zu einen anderen
+   \item Beispiel der Autorin:
+   \begin{itemize}
+     \item Schauspielikone Catherine Deneuve steht neben einer Parfümflasche.
+     \item Ziel: Konsumenten sollen das Parfüm mit einer schönen Frau verbinden.
+     \item Verschiebung eines semantischen Netzwerks\\
+     Schauspielerei $\Rightarrow$ Parfümmarke
+   \end{itemize}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Warum LBA Risiko für Privatsphäre?}
+ \begin{itemize}
+   \item ähnliches potential zur Sinnverschiebung hat LBA
+   \item man kann durch Werbung die Bedeutung die mit einem Ort assoziiert wird ändern
+   \item Marketer können basierend auf aktuellen Standort der Person zielgerichtete Werbung ausliefern und sein Reaktion überprüfen
+   \item Gilles Deleuze meint durch LBA kann das Verhalten und Handeln einer Person gezielt beeinflusst werden\\
+   (durch ständigen abgleich der Reaktion auf eine Werbung, bei ungewünschten Verhalten wird Werbung verändert)
+   \item Lokalisierung und LBA kann die Beziehung einer Person zu seiner Umwelt manipulieren
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Warum LBA Risiko für Privatsphäre?}
+ \begin{itemize}
+   \item Stephen Wicker fast wie folgt zusammen:\\ \vspace{.5cm}
+   \textit{"`LBA has the potential to detract from the experience of [\dots] familiar and meaningfilled environs. One’s surroundings may thus lose their ’placeness’ through LBA, including their meaning, and become merely a path to be traversed. As places become locations, meaning is lost to the individual. That is, we lose some of ourselves, as well as one of the critical processes through which we become a self."'}
+ \end{itemize}
+\end{frame}
+
 \section{Location Anonymity}
-\begin{frame}{Location Anonymity}
+\subsection{}
+\begin{frame}{Allgemein}
 \begin{itemize}
-  \item Shannon-theoretischer Ansatz eines Models
-  \item Anonymisierte Location Based Services
+  \item um auf Vorzüge von LBS und LBA nicht verzichten zu müssen, müssen die Daten anonymisiert werden
+  \item das löschen von Gerät-ID, Namen oder Telefonnummern aus den Datensätzen ist nicht ausreichend
+  \item innerhalb weniger Wochen gelang es Arvind Narayanan und Vitaly Shmatikov mittels sogenannten "`Correlation Attacks"' so anonymisierte Daten zu de-anonymisieren
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Allgemein}
+\begin{itemize}
+  \item Correlation Attacks: Prinzip ist der Vergleich der Daten mit anderen nicht anonymisierten Daten unter folgenden zwei Hauptaspekten:
+  \begin{itemize}
+  \item Konzentration auf selten vorkommende Datenattribute
+  \item der zutreffendeste Treffer sollte eine viel höhere Punktzahl haben als ein weniger zutreffender Treffer $\Rightarrow$ "`False Positives"'
+  \end{itemize}
+  \item Wicker versucht ein beispielhaftes Model zur Erklärung des Erflogs bzw. Misserfolgs von "`Correlation Attacks"' aufzustellen, auf Grundlage einer Theorie von Claude Shannon
 \end{itemize}
 \end{frame}
 
 \subsection{Ansatz Shannon}
+\begin{frame}{Shannon - "`Unicity Distance"'}
+\begin{itemize}
+  \item 1949 veröffentlichte Claude Shannon den Artikel "`Communication Theory of Secret System"'
+  \item dort definierte er die \textit{"`Unicity Distance"'}:\\ Die minimale Menge von Chiffretex, die benötigt wird, so dass die Unbestimmtheit über einen Teil eines Klartextes nicht mehr gegeben ist.
+  \item der Ansatz kann auf die Deanonymisierung übertragen werden:\\
+  Minimale Menge von anonymen Daten ist ausreichend, um im Abgleich mit nicht anonymen Datensätzen, einige zu de-anonymisieren
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Shannon-theoretischer Ansatz eines Models}
 \begin{itemize}
-  \item \dots
+  \item Basierend auf dem Paper erfolgt an der Tafel ein Shannon-theoretischer Versuch diesen Sachverhalt zu verdeutlichen.
 \end{itemize}
 \end{frame}
 
 \subsection{Anonymisierte LBS}
 \begin{frame}{Anonymisierte Location Based Services}
 \begin{itemize}
-  \item \dots
+  \item LBS sollen helfen die Anonymität und Privatsphäre von Personen zu bewahren
+  \item Erläuterung von LBS erfolgt an einem Beispiel aus dem Paper
+  \item LBS namens "`The Doppio Detector"', dient dazu die Richtung zum nächstgelegenen Expresso-Shop zu zeigen
 \end{itemize}
 \end{frame}
 
-\section{\dots}
-\begin{frame}{\dots}
+\begin{frame}{Erläuterung am Beispiel}
 \begin{itemize}
-  \item \dots
+  \item zwei Informationen müssen hier miteinander verknüpft werden\\ \vspace{.1cm}
+  \textit{aktueller Standort + Standorte von nahegelegenen Expresso-Shops}
+  \item durch einen Navigationsalgorithmus lässt sich so ein Weg errechnen\\ \vspace{0.5cm}
+  \hspace{-0.5cm}$\Longrightarrow$ zwei strukturelle Funktionen eines LBS:\\ \vspace{0.2cm}
+  \enumerate
+    \item Position bzw. Ort an dem sich eine Person befindet, mit dem notwendigen Grad an Genauigkeit ermitteln
+    \item eine Datenbank nutzen, um die Positionsdaten abzugleichen und so die gewünschte Information ermitteln zu können
+  \endenumerate  
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Unabhängige GPS-Ortung}
+\itemize
+  \item im Hinblick auf anonymisierte LBS, beste Mittel unbhängige GPS-Ortung
+  \item mobile Engeräte müssen Positionsdaten empfangen können ohne selbst Informationen preisgeben zu müssen
+  \item Zitat S. Wicker:\\ \vspace{.2cm}
+  \textit{"`[\dots] the more that can be done within the handset and kept within the handset, the greater the preservation of anonymity."'}\vspace{.2cm}
+  \item Endgeräte müssten demnach alle Daten direkt vom GPS-Satelliten abfragen, was wie schon erwähnt sehr lange dauern kann
+\enditemize
+\end{frame}
+
+\begin{frame}{Unabhängige GPS-Ortung}
+\itemize
+  \item eine Möglichkeit ist, dass die Service Provider die Informationen von nächsten Mast ausgeben, dabei ist die Lokalisierung des Endgeräts nur sehr grob und die Privatsphäre bleibt somit erhalten $\Rightarrow$ ein generierter Eigenschaftsvektor enthält somit nur sehr wenige Koordinaten
+\enditemize
+\end{frame}
+
+\begin{frame}{Weitere Ansätze}
+\itemize
+  \item Ansatz von Khoshgozaran und Shahabi
+  \item kurz gesagt: Das Netzwerk übernimmt die Ortung.
+  \item Netzwerk wird aber daran gehindert das Endgerät zu korrekt zu lokalisieren
+  \item das Endgerät überträgt seine Position mit einer vorherigen Translation dieser
+  \item der Server erhält die verfälschte Position und gibt den Standort zurück
+  \item das Endgerät macht auf dem empfangen Standort die Translation rückgängig und hat somit die korrekten Daten\\ \vspace{.2cm}
+  \hspace{-0.5cm}$\Longrightarrow$ Grundsätzlich kann geschlussfolgert werden, dass die Privatsphäre nicht zwingend leiden muss
+\enditemize
+\end{frame}
+
+\begin{frame}{Bewahrung Privatsphäre $\curvearrowright$ zweite LBS Funktion}
+\begin{itemize}
+  \item zwei weitere Hürden:
+    \begin{enumerate}
+      \item \textbf{Konsistente Eingabegenauigkeit} \\
+      Eine Person die den nächstliegenden Expresso-Shop sucht, benötigt die Richtung auf Adresslevel-Ebene.
+      \item \textbf{Bekannte Position} \\
+      Viele LBS-Anfragen beinhalten Objekte/Ziele deren Position bekannt ist.
+    \end{enumerate}
+  \item um Anonymität trotz Mappings zu bewahren, gibt es einige Mittel
+\end{itemize}
+\end{frame}
+
+\begin{frame}{"`k-anonymity"' Ansatz}
+\itemize
+\item eine ist die sogenannte "`k-anonymity"' Ansatz: \\ \vspace{.1cm}
+  \begin{small}
+	\hspace{-1.2cm} \textit{"`Auf Positionsdaten bezogen versteht man unter \textbf{location k-anonymity}\\
+	\hspace{-1.2cm} den Zustand, dass der Benutzer innerhalb einer Gruppe von $k$ Benutzern\\
+	\hspace{-1.2cm} nicht identifiziert werden kann. Hergestellt wird diese Bedingung dadurch,\\
+	\hspace{-1.2cm} dass die vom Benutzer preisgegebenen Positionsdaten ununterscheidbar sind\\
+	\hspace{-1.2cm} von mindestens $k - 1$ weiteren  Benutzern (z.B. in dem statt einer präzisen\\
+	\hspace{-1.2cm} Position lediglich eine größere Region mitgeteilt wird). Ein Rückschluss auf\\
+	\hspace{-1.2cm} eine bestimmte Person ist also nur mit Wahrscheinlichkeit $\frac{1}{k}$ möglich."'}
+  \end{small}
+\item für LBS Mapping-Funktionen bedeutet der Ansatz, dass Informationen die eine Person identifizieren bei $k$ Anfragen gelöscht werden
+\item dabei können trotz dessen noch unerwünschte Informationen nach außen dringen
+\enditemize
+\end{frame}
+
+\begin{frame}{Weitere Ansätze}
+\itemize
+\item ein erster weiteren Ansatz benutzt keine exakten Ortsinformationen
+\item beispielsweise schickt man nur die Ortsangabe "`Altstadt Stralsund"'
+\item eine Expresso-Shop-LBS könnte dann einfach eine Karte mit den Expresso-Shops in der Altstadt schicken
+\item der Nutzer kann nun einen Shop wählen und das mobile Endgerät berechnet die Route dorthin selbst
+\enditemize
+\end{frame}
+
+\begin{frame}{Weitere Ansätze}
+\itemize
+\item noch ein weiterer Ansatz wäre die Länge einer Lokalisierungsliste zu begrenzen
+\item ein Dienst wird somit behindert, festzustellen von welchem konkreten Endgerät die Anfrage stammt
+\item laut Wicker demnach auch eine Authentifizierung mittels "`Public-Key"'-Infrastrukturen und verschlüsselter Autorisierung und das ohne die Identität preiszugeben
+\item außerdem können mittels zufälligen Tags häufig anfragende Personen anonymisiert werden
+\item sozusagen ergibt das wieder eine \textit{k-anonymity}
+\item kombiniert mit groben Ortungen oder zufälligen Verzerrungen besteht ein vielversprechender Ansatz die Privatsphäre zu schützen
+\enditemize
 \end{frame}
 
 \section{Fazit}
+\subsection{}
 \begin{frame}{Fazit}
 \begin{itemize}
-  \item \dots
+  \item Location Privacy ist ein ernstzunehmendes Thema
+  \item durch besser werdende Technick Postionbestimmung auf Adressebene möglich
+  \item Gefahren \& Risiken:
+  \begin{itemize}
+  \item Gefahr, dass jemand durch Kenntnis der aktuellen Position einer Person ständig verfolgt werden kann (Stichwort Stalker)
+  \item Manipulation und Bedrohung der Selbstbestimmtheit bzw. Autonomie einer Person
+  \item Einflussnahme als auch Störung der Beziehungen von Personen hinsichtlich ihres Umfelds
+  \item ernste Gefahr für die Privatsphäre durch Adresslevel-genaue Lokalisierung, da hierdurch Vorlieben, Eigenschaften, Verhalten als auch Glauben einer Person aufgedeckt werden können  
+  \end{itemize}
+  \item daher ungemein wichtig die Entwicklung anonymisierter LBS voranzutreiben, um Anonymität und Privatsphäre zu schützen
 \end{itemize}
 \end{frame} 
 
 \section{Fragen}
+\subsection{}
 \begin{frame}{Fragen}
 \begin{minipage}{\textwidth}
   \begin{center}
