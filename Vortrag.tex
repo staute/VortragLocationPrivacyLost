@@ -42,9 +42,9 @@
 
 \begin{frame}{Hintergrund}
 \begin{itemize}
-  \item Apple zeichnet außerdem MAC-Adressen und Signalstärken von Access Points, Speicherung in Kombination mit weiteren Geo- und Zeit-Daten
-  \item Apple zeichnet desweiteren IDs und Signalstärken von Mobilfunkmasten auf, Speicherung in Kombination mit IPhone Geo-Daten
-  \item Apple versicherte die Daten werden nur anonymisiert genutzt, die Daten werden nur zur Verbesserung von Location Based Services verwendet
+  \item Apple zeichnet MAC-Adressen und Signalstärken von Access Points, Speicherung in Kombination mit weiteren Geo- und Zeit-Daten
+  \item Apple zeichnet des Weiteren IDs und Signalstärken von Mobilfunkmasten auf, Speicherung in Kombination mit IPhone Geo-Daten
+  \item Apple versicherte die Daten werden nur anonymisiert genutzt, die Daten werden nur zur Verbesserung von "`Location Based Services"' verwendet
 \end{itemize}
 $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger die Anonymität und Privatsphäre zu wahren.}
 \end{frame}
@@ -59,11 +59,13 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{center}
 \end{frame}
 
-\subsection{}
-\begin{frame}{Zielsetzung}
+\subsection{Zielsetzung}
+\begin{frame}{Zielsetzung der Ausarbeitung \& des Vortrags}
 \begin{itemize}
   \item Einblick in das Thema "`Location Privacy"'
-  \item Grundlage war der wissenschaftliche Artikel "`The Loss of Location Privacy in the Cellular Age"' (Stephen B. Wicker, August 2012 CACM)
+  \item Grundlage war der wissenschaftliche Artikel\\
+  "`The Loss of Location Privacy in the Cellular Age"'\\
+  (Stephen B. Wicker\footnote{Professor des "`Electrical and Computer Engineering"' an der Cornell University und ist Mitglied der Fachbereiche "`Computer Science, Information Science, Applied Mathematics}, August 2012 CACM)
   \item Grundlagen zum Verstehen der Thematik
   \item Gefahren \& Risiken
   \item Möglichkeiten zum Schutz durch direkte Anonymisierung
@@ -125,7 +127,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \begin{frame}{Identifizierung von Access-Points}
 \begin{itemize}
   \item noch besserer Ansatz ist die Identifizierung von Access-Points (AP) sowie Mobilfunkmasten
-  \item Apple und Google sammelt daher schon länger entsprechende Daten über ihre Endgeräte
+  \item Apple und Google sammeln daher schon länger entsprechende Daten über ihre Endgeräte
   \item großer Vorteil ist der meist feste Standort der APs und Masten
   \item durch die gesammelten Daten lässt sich heute bis auf die Hausnummer genau bestimmen wo sich das Endgerät befindet
   \item Position wird durch "`Triangulierung"' bestimmt
@@ -137,7 +139,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   \begin{column}{.4\textwidth}
   \begin{itemize}
   \item Waben zusammen sind vereinfacht eine Ortungskarte
-  \item Triangulierung auf Basis des am nächstliegenden 3 Ortungsbereiche (Waben)
+  \item Triangulierung auf Basis der dem Engerät am nächstliegenden 3 Ortungsbereiche (Waben)
   \item \textcolor{red}{Schwerpunkt-Rechnung an der Tafel! (PDF S.5)}
   \end{itemize}
   \end{column}
@@ -156,11 +158,11 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \begin{itemize}
   \item darunter versteht man standortbezogene Dienste, kurz LBS
   \item Dienste berücksichtigen die aktuelle Position
-  \item oft werden zum Ort auch noch die aktuelle Zeit und Infos über den Nutzer berücksichtigt
+  \item zum Ort werden auch noch die aktuelle Zeit und Infos über den Nutzer vom LBS berücksichtigt
   \item Definition von Jochen Schiller und Agnes Voisard:\\ \vspace{.5cm}
   \textit{"`Location Services can be defined as services that integrate a mobile device’s location or position with other information so as to provide added value to a user."'}
   \vspace{.5cm}
-  \item Oft genutzt in Informationsdiensten zu Sehenswürdigkeiten, Einkaufsmöglichkeiten oder Ärzten in der näheren Umgebung
+  \item oft genutzt in Informationsdiensten zu Sehenswürdigkeiten, Einkaufsmöglichkeiten oder Ärzten in der näheren Umgebung
 \end{itemize}
 \end{frame}
 
@@ -182,18 +184,18 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   \end{center}
 \end{frame}
 
-\subsection{}
-\begin{frame}{Location Based Advertising}
+\subsection{Location Based Advertising}
+\begin{frame}{Erläuterung von Location Based Advertising}
 \begin{itemize}
   \item kurz LBA, auch als Location Based Marketing (LBM) bekannt
-  \item sehr stark an LBS angelehnt, LBA beruht auf LBS
+  \item LBA beruht auf LBS
   \item Verknüpfung zwischen Marketing (inkl. Werbung) und LBS
   \item basierend auf Präferenzen, aktuellem Ort und der aktuellen Zeit wird dem Nutzer eine maßgeschneiderte Werbung präsentiert
 \end{itemize}
 \end{frame}
 
-\subsection{}
-\begin{frame}{Privatsphäre \& Anonymisierung}
+\subsection{Privatsphäre \& Anonymisierung}
+\begin{frame}{Erläuterung von Privatsphäre \& Anonymisierung}
 \begin{itemize}
   \item Begriff Privatsphäre nicht klar abgrenzbar
   \item Definition nach Alan Westin: \\ \vspace{.5cm}
@@ -201,7 +203,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Privatsphäre \& Anonymisierung}
+\begin{frame}{Erläuterung von Privatsphäre \& Anonymisierung}
 \begin{itemize}
   \item nach A. Westin hat jeder Mensch Anrecht selbst zu bestimmen, was er von sich preisgibt
   \item außerdem wird deutlich das Privatsphäre mit dem Recht auf Anonymität einhergeht
@@ -210,7 +212,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame}
 
 \subsection*{Ort}
-\begin{frame}{Aufassungen von Begriff "`Ort'}
+\begin{frame}{Aufassungen vom Begriff "`Ort'}
 \begin{itemize}
   \item es gibt verschiedene Auffassungen
   \item im geografischen Sinne ein Raum bzw. fester Standort
@@ -226,7 +228,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Aufassungen von Begriff "`Ort"'}
+\begin{frame}{Aufassungen vom Begriff "`Ort"'}
 \begin{itemize}
   \item Ort wird nun eine gewisse Bedeutung, die von örtlichen Gegebenheiten und subjektiven Empfinden der Person abhängt
   \item andere Phänomenologen und Geografen haben das ganze soweit aufgefasst das der Ort bzw. Platz zu einen tiefgreifenden Zentrum der menschlichen Existenz zählt
@@ -257,7 +259,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   \item aus dem Profil lässt sich problemlos ableiten das sich Wicker oft in Washington und New York aufhält
   \item durch Bewegungsprofile kann unmittelbar nachvollzogen werden, wo sich eine Person aufgehalten hat
   \item das ganze durch besser werdende Technik bis auf Adressebene
-  \item Problem, solche "`anonyme"' Daten können mit Hilfe anderer öffentlich zugänglicher Daten leicht de-anonymisiert werden
+  \item Problem, solche anonymen Daten können mit Hilfe anderer öffentlich zugänglicher Daten leicht de-anonymisiert werden
   \end{itemize}
 \end{frame}
 
@@ -280,8 +282,8 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   Häufigkeit, Dauer, Fachgebiet des Arztes $\Rightarrow$ Krankheitsanfälligkeit, ernste oder
   vielleicht chronische Krankheit usw.
   \item \textbf{Einrichtung zur Unterhaltung/Freizeit}\\
-  z. B. Möglichkeit zu ermitteln welchen Musikstil eine Person bevorzugt und viele andere ableitbare Informationen
-  \item laut S. Wicker könnte diese Liste noch weiter fortgeführt werden
+  z. B. Möglichkeit zu ermitteln welchen Musikstil eine Person bevorzugt und viele andere ableitbare Informationen \\ \vspace{.2cm}
+  \hspace{-.5cm} $\Rightarrow$ laut S. Wicker könnte diese Liste noch weiter fortgeführt werden
   \end{itemize}
 \end{frame}
 
@@ -314,7 +316,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{Warum LBA Risiko für Privatsphäre?}
  \begin{itemize}
-   \item ähnliches potential zur Sinnverschiebung hat LBA
+   \item ähnliches Potential zur Sinnverschiebung hat LBA
    \item man kann durch Werbung die Bedeutung die mit einem Ort assoziiert wird ändern
    \item Marketer können basierend auf aktuellen Standort der Person zielgerichtete Werbung ausliefern und sein Reaktion überprüfen
    \item Gilles Deleuze meint durch LBA kann das Verhalten und Handeln einer Person gezielt beeinflusst werden\\
@@ -331,23 +333,24 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame}
 
 \section{Location Anonymity}
-\subsection{}
-\begin{frame}{Allgemein}
+\subsection{Allgemein}
+\begin{frame}{Allgemeines zu Location Anonymity}
 \begin{itemize}
   \item um auf Vorzüge von LBS und LBA nicht verzichten zu müssen, müssen die Daten anonymisiert werden
-  \item das löschen von Gerät-ID, Namen oder Telefonnummern aus den Datensätzen ist nicht ausreichend
+  \item das Löschen von Gerät-ID, Namen oder Telefonnummern aus den Datensätzen ist nicht ausreichend
   \item innerhalb weniger Wochen gelang es Arvind Narayanan und Vitaly Shmatikov mittels sogenannten "`Correlation Attacks"' so anonymisierte Daten zu de-anonymisieren
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Allgemein}
+\subsection{Correlation Attacks}
+\begin{frame}{Erläuterung Correlation Attacks}
 \begin{itemize}
   \item Correlation Attacks: Prinzip ist der Vergleich der Daten mit anderen nicht anonymisierten Daten unter folgenden zwei Hauptaspekten:
-  \begin{itemize}
+  \begin{enumerate}
   \item Konzentration auf selten vorkommende Datenattribute
   \item der zutreffendeste Treffer sollte eine viel höhere Punktzahl haben als ein weniger zutreffender Treffer $\Rightarrow$ "`False Positives"'
-  \end{itemize}
-  \item Wicker versucht ein beispielhaftes Model zur Erklärung des Erflogs bzw. Misserfolgs von "`Correlation Attacks"' aufzustellen, auf Grundlage einer Theorie von Claude Shannon
+  \end{enumerate}
+  \item Wicker versucht ein beispielhaftes Model zur Erklärung des Erfolgs bzw. Misserfolgs von "`Correlation Attacks"' aufzustellen, auf Grundlage einer Theorie von Claude Shannon
 \end{itemize}
 \end{frame}
 
@@ -355,16 +358,16 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \begin{frame}{Shannon - "`Unicity Distance"'}
 \begin{itemize}
   \item 1949 veröffentlichte Claude Shannon den Artikel "`Communication Theory of Secret System"'
-  \item dort definierte er die \textit{"`Unicity Distance"'}:\\ Die minimale Menge von Chiffretex, die benötigt wird, so dass die Unbestimmtheit über einen Teil eines Klartextes nicht mehr gegeben ist.
-  \item der Ansatz kann auf die Deanonymisierung übertragen werden:\\
-  Minimale Menge von anonymen Daten ist ausreichend, um im Abgleich mit nicht anonymen Datensätzen, einige zu de-anonymisieren
+  \item dort definierte er die \textit{"`Unicity Distance"'}:\\ Die minimale Menge von Chiffretext, die benötigt wird, so dass die Unbestimmtheit über einen Teil eines Klartextes nicht mehr gegeben ist.
+  \item der Ansatz kann auf die De-anonymisierung übertragen werden:\\
+  Es gibt eine minimale Menge von anonymen Daten die ausreichend, um im Abgleich mit nicht anonymen Datensätzen, einige zu de-anonymisieren
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Shannon-theoretischer Ansatz eines Models}
-\begin{itemize}
-  \item Basierend auf dem Paper erfolgt an der Tafel ein Shannon-theoretischer Versuch diesen Sachverhalt zu verdeutlichen.
-\end{itemize}
+\begin{center}
+  Basierend auf dem Paper erfolgt an der Tafel ein Shannon-theoretischer Versuch diesen Sachverhalt zu verdeutlichen.
+\end{center}
 \end{frame}
 
 \subsection{Anonymisierte LBS}
@@ -391,8 +394,8 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{Unabhängige GPS-Ortung}
 \itemize
-  \item im Hinblick auf anonymisierte LBS, beste Mittel unbhängige GPS-Ortung
-  \item mobile Engeräte müssen Positionsdaten empfangen können ohne selbst Informationen preisgeben zu müssen
+  \item im Hinblick auf anonymisierte LBS, beste Mittel unabhängige GPS-Ortung
+  \item mobile Endgeräte müssen Positionsdaten empfangen können ohne selbst Informationen preisgeben zu müssen
   \item Zitat S. Wicker:\\ \vspace{.2cm}
   \textit{"`[\dots] the more that can be done within the handset and kept within the handset, the greater the preservation of anonymity."'}\vspace{.2cm}
   \item Endgeräte müssten demnach alle Daten direkt vom GPS-Satelliten abfragen, was wie schon erwähnt sehr lange dauern kann
@@ -401,7 +404,11 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{Unabhängige GPS-Ortung}
 \itemize
-  \item eine Möglichkeit ist, dass die Service Provider die Informationen von nächsten Mast ausgeben, dabei ist die Lokalisierung des Endgeräts nur sehr grob und die Privatsphäre bleibt somit erhalten $\Rightarrow$ ein generierter Eigenschaftsvektor enthält somit nur sehr wenige Koordinaten
+  \item eine Möglichkeit: Service Provider stellt Informationen zur Konstellation bereit
+  \item dadurch entweichen zwar auch Informationen über das mobile Endgerät, jedoch sind diese Informationen sehr grob
+  \item grob, weil der Service Provider nur den Mobilfunkmast über den das mobile Endgerät kommuniziert, kennen muss\\ \vspace{.1cm}
+  $\Rightarrow$ gibt wenig über das Verhalten oder die Vorlieben einer Person preis  
+  \item technisch: ein generierter  Eigenschaftsvektor enthält somit nur sehr wenige Koordinaten mit Informationen
 \enditemize
 \end{frame}
 
@@ -409,11 +416,11 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \itemize
   \item Ansatz von Khoshgozaran und Shahabi
   \item kurz gesagt: Das Netzwerk übernimmt die Ortung.
-  \item Netzwerk wird aber daran gehindert das Endgerät zu korrekt zu lokalisieren
-  \item das Endgerät überträgt seine Position mit einer vorherigen Translation dieser
+  \item Netzwerk wird aber daran gehindert das Endgerät korrekt zu lokalisieren
+  \item das Endgerät überträgt seine Position mit einer vorherigen Translation
   \item der Server erhält die verfälschte Position und gibt den Standort zurück
   \item das Endgerät macht auf dem empfangen Standort die Translation rückgängig und hat somit die korrekten Daten\\ \vspace{.2cm}
-  \hspace{-0.5cm}$\Longrightarrow$ Grundsätzlich kann geschlussfolgert werden, dass die Privatsphäre nicht zwingend leiden muss
+  \hspace{-0.5cm}$\Longrightarrow$ grundsätzlich kann geschlussfolgert werden, dass die Privatsphäre nicht zwingend leiden muss
 \enditemize
 \end{frame}
 
@@ -432,7 +439,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{"`k-anonymity"' Ansatz}
 \itemize
-\item eine ist die sogenannte "`k-anonymity"' Ansatz: \\ \vspace{.1cm}
+\item eins ist der sogenannte "`k-anonymity"' Ansatz: \\ \vspace{.1cm}
   \begin{small}
 	\hspace{-1.2cm} \textit{"`Auf Positionsdaten bezogen versteht man unter \textbf{location k-anonymity}\\
 	\hspace{-1.2cm} den Zustand, dass der Benutzer innerhalb einer Gruppe von $k$ Benutzern\\
@@ -449,7 +456,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{Weitere Ansätze}
 \itemize
-\item ein erster weiteren Ansatz benutzt keine exakten Ortsinformationen
+\item ein weiterer Ansatz benutzt keine exakten Ortsinformationen
 \item beispielsweise schickt man nur die Ortsangabe "`Altstadt Stralsund"'
 \item eine Expresso-Shop-LBS könnte dann einfach eine Karte mit den Expresso-Shops in der Altstadt schicken
 \item der Nutzer kann nun einen Shop wählen und das mobile Endgerät berechnet die Route dorthin selbst
@@ -458,9 +465,9 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{Weitere Ansätze}
 \itemize
-\item noch ein weiterer Ansatz wäre die Länge einer Lokalisierungsliste zu begrenzen
+\item noch ein anderer Ansatz wäre die Länge einer Lokalisierungsliste zu begrenzen
 \item ein Dienst wird somit behindert, festzustellen von welchem konkreten Endgerät die Anfrage stammt
-\item laut Wicker demnach auch eine Authentifizierung mittels "`Public-Key"'-Infrastrukturen und verschlüsselter Autorisierung und das ohne die Identität preiszugeben
+\item laut Wicker ist demnach auch eine Authentifizierung mittels "`Public-Key"'-Infrastrukturen und verschlüsselter Autorisierung möglich und das ohne die Identität preiszugeben
 \item außerdem können mittels zufälligen Tags häufig anfragende Personen anonymisiert werden
 \item sozusagen ergibt das wieder eine \textit{k-anonymity}
 \item kombiniert mit groben Ortungen oder zufälligen Verzerrungen besteht ein vielversprechender Ansatz die Privatsphäre zu schützen
@@ -468,11 +475,11 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame}
 
 \section{Fazit}
-\subsection{}
-\begin{frame}{Fazit}
+\subsection{Fazit}
+\begin{frame}{Abschließendes Fazit}
 \begin{itemize}
   \item Location Privacy ist ein ernstzunehmendes Thema
-  \item durch besser werdende Technick Postionbestimmung auf Adressebene möglich
+  \item durch besser werdende Technik Postionsbestimmung auf Adressebene möglich
   \item Gefahren \& Risiken:
   \begin{itemize}
   \item Gefahr, dass jemand durch Kenntnis der aktuellen Position einer Person ständig verfolgt werden kann (Stichwort Stalker)
@@ -485,8 +492,8 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame} 
 
 \section{Fragen}
-\subsection{}
-\begin{frame}{Fragen}
+\subsection{Fragen}
+\begin{frame}
 \begin{minipage}{\textwidth}
   \begin{center}
     \Huge \textbf{Vielen Dank für ihre Aufmerksamkeit!}
