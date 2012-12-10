@@ -42,7 +42,7 @@
 
 \begin{frame}{Hintergrundinformation zur Thematik}
 \begin{itemize}
-  \item Apple zeichnet MAC-Adressen und Signalstärken von Access Points, Speicherung in Kombination mit weiteren Geo- und Zeit-Daten
+  \item Apple gab zu MAC-Adressen und Signalstärken von Access Points aufzuzeichnen, Speicherung in Kombination mit Zeitstempel und einem Geo-Tag
   \item Apple zeichnet des Weiteren IDs und Signalstärken von Mobilfunkmasten auf, Speicherung in Kombination mit IPhone Geo-Daten
   \item Apple versicherte die Daten werden nur anonymisiert genutzt, die Daten werden nur zur Verbesserung von "`Location Based Services"' verwendet
 \end{itemize}
@@ -65,12 +65,15 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   \begin{column}{.85\textwidth}
     \begin{itemize}
       \item Einblick in das Thema "`Location Privacy"'
-      \item Grundlage war der wissenschaftliche Artikel\\
+      \item Grundlage war der wissenschaftliche Artikel\\ \vspace{.2cm}
       "`The Loss of Location Privacy in the Cellular Age"'\\
-      (Stephen B. Wicker\footnote[frame]{Professor des "`Electrical and Computer Engineering"' an der Cornell University und ist Mitglied der Fachbereiche "`Computer Science, Information Science, Applied Mathematics}, August 2012 CACM)
+      \begin{small}
+      (Stephen B. Wicker\footnote[frame]{Professor der "`School of Electrical and Computer Engineering Cornell University"' und ist Mitglied der Fachbereiche "`Computer Science, Information Science, Applied Mathematics}, August 2012 CACM)
+      \end{small} \vspace{.2cm}
       \item Grundlagen zum Verstehen der Thematik
-      \item Gefahren \& Risiken
-      \item Möglichkeiten zum Schutz durch direkte Anonymisierung
+      \item Gefahren \& Risiken bzgl. Privatsphäre im Mobilfunkzeitalter
+      \item Möglichkeiten zum Schutz der Privatssphäre\\
+      (anonymisierte Location Based Services)
     \end{itemize}
   \end{column}
   \begin{column}{.15\textwidth}
@@ -82,14 +85,24 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame}
 
 \section{Grundlagen}
+\subsection{Grundlagen}
+\begin{frame}
+\begin{itemize}
+  \item um "`Location Based Services"' und die restliche Thematik verstehen zu können bedarf es der Erläuterung zugrundeliegender Ortungstechnologien
+  \item Ortungstechnologien: hier wird der Ursprung der mobilen Ortung und in dem Zusammenhang GPS und Alternativen erläutert
+  \item daraufhin werden die Begriffe \textit{Location Based Services}, \textit{Location Based Advertising}, \textit{Privatsphäre}, \textit{Anonymisierung} und \textit{Ort} erläutert
+  \item damit wird eine Grundlage für die Abschnitte "`Location Privacy"' und "`Location Anonymity"' geschaffen
+\end{itemize}
+\end{frame}
+
 \subsection{Ortungstechnologie}
 \subsubsection{Mobilfunküberwachung \& E911}
 \begin{frame}{Mobilfunküberwachung \& E911}
 \begin{itemize}
   \item Mobilfunknetze grundsätzlich darauf ausgelegt Endgeräte zu tracken, ursprünglich nur um nächstgelegenen Mast zu finden
-  \item 1996 erste Versuche die Ortung zu verfeinern (E911)
-  \item E911 sollte die Mobilfunkanbieter zwingen die Ortsinformation bei einem 911-Anruf an die Notrufzentrale zu übermitteln
-  \item E911 war sozusagen der Grundstein für die Ortung im Mobilfunksektor
+  \item 1996 erste Versuche die Ortung zu verfeinern (\textbf{E911} durch die \textit{Federal Communication Commission})
+  \item \textbf{E911} sollte die Mobilfunkanbieter zwingen die Ortsinformation bei einem 911-Anruf an die Notrufzentrale zu übermitteln
+  \item \textbf{E911} war sozusagen der Grundstein für die Ortung im Mobilfunksektor, unter anderem Grund dafür das die meisten mobilen Endgeräte heute auch andere Lokalisierungstechniken besitzen
 \end{itemize}
 \end{frame}
 
@@ -107,7 +120,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame}
 
 \subsubsection{Alternative zu GPS}
-\begin{frame}<1>[t,label=zooms]{Netzwerkbasierte Lokalisierung}
+\begin{frame}{Netzwerkbasierte Lokalisierung}
 \begin{itemize}
   \item wegen der meist langsamen Ortung durch GPS sucht man aktiv nach Alternativen
   \item eine ist die netzwerkbasierte Positionsbestimmung
@@ -124,14 +137,12 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   \begin{column}{.45\textwidth}
   \begin{center}
   \vspace{-0.5cm}
-  \framezoom<1><2>(5.8cm,3.5cm)(3cm,3cm)
   \pgfimage[width=.8\textwidth]{images/basiszellen.png}
   \end{center}
   \end{column}
   \end{columns}
 \end{itemize}
 \end{frame}
-\againframe<2>{zooms}
 
 \begin{frame}{Identifizierung von Access-Points}
 \begin{itemize}
@@ -143,24 +154,28 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{itemize}
 \end{frame}
 
-\begin{frame}<2>[t,label=zooms2]{Identifizierung von Access-Points}
+\begin{frame}{Identifizierung von Access-Points}
   \begin{columns}
-  \begin{column}{.4\textwidth}
+  \begin{column}{.5\textwidth}
   \begin{itemize}
+  \vspace{-.4cm}
   \item Waben zusammen sind vereinfacht eine Ortungskarte
   \item Triangulierung auf Basis der dem Engerät am nächstliegenden 3 Ortungsbereiche (Waben)
-  \item \textcolor{red}{Schwerpunkt-Rechnung an der Tafel! (PDF S.5)}
-  \end{itemize}
+  \item Berechnung durch WCL (Weighted centroid localization, gewichteter Schwerpunkt)\\ %\vspace{.5cm}
+  \begin{Large}
+  \colorbox{lightgray}{$\mathbf{P(x,y) = \frac{(\sum_{i=1}^n (w_i * B_i(x,y)))}{(\sum_{i=1}^n w_i)}}$}
+  \end{Large}
+  \end{itemize}  
   \end{column}
-  \begin{column}{.5\textwidth}
+  \begin{column}{.45\textwidth}
   \begin{center}
-  \framezoom<2><3>(4.15cm,0.45cm)(7.3cm,5.15cm)
-  \pgfimage[width=\textwidth]{images/triangulierung.png}
+  	\vspace{-.8cm}
+    \includegraphics[scale=.15]{images/triangulierung.png}\\
+    \hspace{.5cm}\includegraphics[scale=.2]{images/Diagram1.pdf}
   \end{center}
   \end{column}
   \end{columns}
 \end{frame}
-\againframe<3>{zooms2}
 
 \subsection{Location Based Services}
 \begin{frame}{Definition LBS}
@@ -221,7 +236,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \end{frame}
 
 \subsection*{Ort}
-\begin{frame}{Aufassungen vom Begriff "`Ort'}
+\begin{frame}{Aufassungen vom Begriff "`Ort"'}
 \begin{itemize}
   \item es gibt verschiedene Auffassungen
   \item im geografischen Sinne ein Raum bzw. fester Standort
@@ -239,7 +254,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \begin{frame}{Aufassungen vom Begriff "`Ort"'}
 \begin{itemize}
-  \item Ort wird nun eine gewisse Bedeutung, die von örtlichen Gegebenheiten und subjektiven Empfinden der Person abhängt
+  \item dem Ort wird nun eine gewisse Bedeutung, die von örtlichen Gegebenheiten und subjektiven Empfinden der Person abhängt zugewiesen
   \item andere Phänomenologen und Geografen haben das ganze soweit aufgefasst das der Ort bzw. Platz zu einen tiefgreifenden Zentrum der menschlichen Existenz zählt
 \end{itemize}
 \end{frame}
@@ -300,11 +315,11 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   \begin{itemize}
   \item Kernaussage soll sein, dass durch die adresslevel-genaue Lokalisierung Informationen über Vorlieben,
   Eigenschaften, Laster, Glauben und Verhalten einer Person in bestimmten Fällen ableitbar sind
-  \item das ist auch der Grund warum diese Daten für gewisse Menschen, Unternehmen und Kriminellen so begehrt sind
-  \item gerade für Marketing Unternehmen stellen die Daten einen unschätzbaren Wert da
-  \item InfoUSA pflegt z.B. eine Liste mit 210 Mio. Konsumenten diese pflegt sich durch LBS nun wesentlich einfacher und besser
-  \item Früher: Person macht Yoga\\
-  Heute: Person macht Yoga + Yogastudio + aktuell Vorort + wie oft? usw.
+  \item das ist auch der Grund warum diese Daten für gewisse Menschen, Konzerne und Kriminellen so begehrt sind
+  \item gerade für Marketing-Unternehmen stellen die Daten einen unschätzbaren Wert da
+  \item "`InfoUSA"' pflegt z.B. eine Liste mit 210 Mio. Konsumenten, durch LBS ist dies nun wesentlich einfacher und besser 
+  \item \textbf{Früher:} Person macht Yoga\\
+  \textbf{Heute:} Yoga + Yogastudio + aktuell Vorort + Wie oft? etc.
   \item LBA geht über normales Marketing weit hinaus
   \end{itemize}
 \end{frame}
@@ -369,7 +384,7 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
   \item 1949 veröffentlichte Claude Shannon den Artikel "`Communication Theory of Secret System"'
   \item dort definierte er die \textit{"`Unicity Distance"'}:\\ Die minimale Menge von Chiffretext, die benötigt wird, so dass die Unbestimmtheit über einen Teil eines Klartextes nicht mehr gegeben ist.
   \item der Ansatz kann auf die De-anonymisierung übertragen werden:\\
-  Es gibt eine minimale Menge von anonymen Daten die ausreichend, um im Abgleich mit nicht anonymen Datensätzen, einige zu de-anonymisieren
+  Es gibt eine minimale Menge von anonymen Daten die ausreicht, um im Abgleich mit nicht anonymisierten Daten, einige zu de-anonymisieren.
 \end{itemize}
 \end{frame}
 
@@ -377,6 +392,15 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 \begin{center}
   Basierend auf dem Paper erfolgt an der Tafel ein Shannon-theoretischer Versuch diesen Sachverhalt zu verdeutlichen.
 \end{center}
+\end{frame}
+
+\begin{frame}{Schlussfolgerung}
+\begin{itemize}
+  \item \textbf{Reduzierung der Länge der Lokalisierungslisten}\\
+  Hat die Mapping-Funktion weniger Informationen zum Mappen, dann wird ein $P$ Vektor mit weniger $t$ Koordinaten generiert.
+  \item \textbf{Reduzierung der Fähigkeit der Mapping-Funktion bestimmte Lokalisierungsdaten in konkrete Koordinatenwerte des P Vektors aufzulösen}\\
+  Möglich indem der Bereich bzw. die Größe eines Ortungspunktes der Lokalisierungsliste reduziert wird.
+\end{itemize}
 \end{frame}
 
 \subsection{Anonymisierte LBS}
@@ -485,9 +509,9 @@ $\Rightarrow$ \textbf{Je besser die Lokalisierungstechniken, desto schwieriger d
 
 \section{Fazit}
 \subsection{Fazit}
-\begin{frame}{Abschließendes Fazit}
+\begin{frame}
 \begin{itemize}
-  \item Location Privacy ist ein ernstzunehmendes Thema
+  \item "`Location Privacy"' ist ein ernstzunehmendes Thema
   \item durch besser werdende Technik Postionsbestimmung auf Adressebene möglich
   \item Gefahren \& Risiken:
   \begin{itemize}
